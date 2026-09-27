@@ -1,4 +1,4 @@
-# 紙頁
+# 大紙頁
 
 HTML、CSS、JavaScript 分層的靜態網站骨架。標記寫在 `index.html`，樣式拆在 `src/styles`，行為拆在 `src/scripts`。開發時由 [Vite](https://vite.dev/) 提供伺服器與熱更新，建置後仍是瀏覽器可以直接開啟的靜態檔。
 
