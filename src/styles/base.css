@@ -35,6 +35,11 @@ input {
   color: inherit;
 }
 
+code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+}
+
 h1,
 h2,
 h3,

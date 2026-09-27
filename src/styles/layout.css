@@ -10,6 +10,10 @@
   border-bottom: 1px solid var(--line);
 }
 
+.site-header.is-scrolled {
+  box-shadow: var(--shadow);
+}
+
 .header-inner,
 .section,
 .site-footer .footer-inner {
@@ -56,9 +60,15 @@
   color: var(--ink-soft);
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.site-nav a[aria-current="location"] {
   color: var(--ink);
   background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.site-nav a[aria-current="location"] {
+  background: var(--accent-soft);
+  font-weight: 600;
 }
 
 .header-actions {
@@ -171,7 +181,7 @@ main {
   html[data-enhanced] .site-nav {
     display: none;
     position: absolute;
-    top: var(--header-h);
+    top: 100%;
     left: 0;
     right: 0;
     margin: 0;
@@ -180,6 +190,7 @@ main {
     align-items: stretch;
     background: var(--bg-raised);
     border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
   }
 
   html[data-enhanced] .site-nav.is-open {

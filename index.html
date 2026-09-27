@@ -141,7 +141,11 @@
               </li>
               <li>
                 <span class="path">nav.js</span>
-                <span class="role">窄螢幕時的選單開關</span>
+                <span class="role">選單、目前區塊、捲動時的頁首</span>
+              </li>
+              <li>
+                <span class="path">swatches.js</span>
+                <span class="role">把色票換成目前的顏色值</span>
               </li>
               <li>
                 <span class="path">notes.js</span>
@@ -164,17 +168,17 @@
           <article class="swatch">
             <div class="chip html"></div>
             <strong>HTML</strong>
-            <span><code>--html</code> 標記層</span>
+            <span><code class="token-value" data-token="--html">--html</code> 標記層</span>
           </article>
           <article class="swatch">
             <div class="chip css"></div>
             <strong>CSS</strong>
-            <span><code>--css</code> 樣式層</span>
+            <span><code class="token-value" data-token="--css">--css</code> 樣式層</span>
           </article>
           <article class="swatch">
             <div class="chip js"></div>
             <strong>JavaScript</strong>
-            <span><code>--js</code> 行為層</span>
+            <span><code class="token-value" data-token="--js">--js</code> 行為層</span>
           </article>
         </div>
       </section>
@@ -189,7 +193,10 @@
         </div>
         <div class="note-panel">
           <form id="note-form" class="note-form">
-            <label for="note-input">新記事</label>
+            <div class="field-head">
+              <label for="note-input">新記事</label>
+              <span id="note-length" class="count">0/120</span>
+            </div>
             <input
               id="note-input"
               name="note"
@@ -200,9 +207,9 @@
             />
             <button class="button" type="submit">記下</button>
             <p id="note-error" class="note-error" role="alert" hidden></p>
-            <p class="hint">最多 20 則，只存在這台瀏覽器的本地儲存。</p>
+            <p id="note-hint" class="hint">最多 20 則，只存在這台瀏覽器的本地儲存。</p>
           </form>
-          <div>
+          <div class="note-slot">
             <p id="note-empty" class="note-empty">還沒有記事。寫下一則，它會留在這台瀏覽器。</p>
             <ul id="note-list" class="note-list" aria-label="記事清單"></ul>
           </div>
