@@ -4,39 +4,31 @@ function setOpen(toggle, nav, open) {
   toggle.textContent = open ? '關閉' : '選單'
 }
 
-function setupCurrentSection(nav) {
+function setupScrollState(nav) {
+  const header = document.querySelector('.site-header')
   const links = [...nav.querySelectorAll('a[href^="#"]')]
   const sections = links
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean)
 
-  if (sections.length === 0) return
-
   const mark = (id) => {
     for (const link of links) {
-      const current = link.getAttribute('href') === `#${id}`
+      const current = id && link.getAttribute('href') === `#${id}`
       if (current) link.setAttribute('aria-current', 'location')
       else link.removeAttribute('aria-current')
     }
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-      if (visible) mark(visible.target.id)
-    },
-    { rootMargin: '-20% 0px -55% 0px', threshold: [0.15, 0.4, 0.75] },
-  )
+  const paint = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 8)
+    const line = window.scrollY + window.innerHeight * 0.45
+    let current = ''
+    for (const section of sections) {
+      if (section.offsetTop <= line) current = section.id
+    }
+    mark(current)
+  }
 
-  for (const section of sections) observer.observe(section)
-}
-
-function setupScrolledHeader() {
-  const header = document.querySelector('.site-header')
-  if (!header) return
-  const paint = () => header.classList.toggle('is-scrolled', window.scrollY > 8)
   paint()
   window.addEventListener('scroll', paint, { passive: true })
 }
@@ -44,8 +36,7 @@ function setupScrolledHeader() {
 export function setupNav(toggle, nav) {
   document.documentElement.dataset.enhanced = 'true'
   setOpen(toggle, nav, false)
-  setupCurrentSection(nav)
-  setupScrolledHeader()
+  setupScrollState(nav)
 
   toggle.addEventListener('click', () => {
     setOpen(toggle, nav, !nav.classList.contains('is-open'))

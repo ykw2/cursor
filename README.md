@@ -18,7 +18,8 @@ src/
   scripts/
     main.js             入口
     theme.js            淺色／深色
-    nav.js              窄螢幕選單
+    nav.js              選單與目前區塊
+    swatches.js         色票上的顏色值
     notes.js            記事
 ```
 
