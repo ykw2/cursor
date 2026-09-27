@@ -2,12 +2,6 @@ import '../styles/tokens.css'
 import '../styles/base.css'
 import '../styles/layout.css'
 import '../styles/components.css'
-import { setupNav } from './nav.js'
-import { setupNotes } from './notes.js'
-import { setupSwatches } from './swatches.js'
-import { setupTheme } from './theme.js'
+import { setupGreeting } from './greeting.js'
 
-setupTheme(document.querySelector('#theme-toggle'))
-setupSwatches()
-setupNav(document.querySelector('#menu-toggle'), document.querySelector('#site-nav'))
-setupNotes(document.querySelector('#notes'))
+setupGreeting(document.querySelector('#main'))

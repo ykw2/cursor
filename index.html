@@ -3,225 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="HTML、CSS、JavaScript 分層的靜態網站骨架。標記、樣式與行為各自獨立。"
-    />
-    <title>紙頁 — HTML / CSS / JS 骨架</title>
+    <meta name="description" content="中秋節快樂。寫下一句祝福，留給想團圓的人。" />
+    <title>中秋節快樂</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Outfit:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <script>
-      try {
-        var saved = localStorage.getItem('paper-theme')
-        var theme =
-          saved ||
-          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-        document.documentElement.dataset.theme = theme
-      } catch (error) {
-        document.documentElement.dataset.theme = 'light'
-      }
-    </script>
   </head>
   <body>
-    <a class="skip" href="#main">跳到內容</a>
+    <a class="skip" href="#main">跳到祝福</a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="#main">
-          <span class="brand-mark" aria-hidden="true"></span>
-          紙頁
-        </a>
-        <nav id="site-nav" class="site-nav" aria-label="頁面區塊">
-          <a href="#structure">目錄</a>
-          <a href="#styles">樣式</a>
-          <a href="#notes">記事</a>
-        </nav>
-        <div class="header-actions">
-          <button id="theme-toggle" class="button ghost" type="button" aria-pressed="false">
-            深色
-          </button>
-          <button
-            id="menu-toggle"
-            class="button ghost menu-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-nav"
-          >
-            選單
-          </button>
-        </div>
+        <p class="brand">中秋</p>
+        <p class="date">農曆八月十五</p>
       </div>
     </header>
 
     <main id="main">
-      <section class="section hero">
-        <div>
-          <p class="kicker">HTML · CSS · JavaScript</p>
-          <h1>標記、樣式、行為，各放一層。</h1>
-          <p class="lead">
-            這個專案把靜態網站拆成三個找得到的地方。改
-            <code>index.html</code> 會改內容，改 <code>src/styles</code> 會改外觀，改
-            <code>src/scripts</code> 會改互動。
-          </p>
-        </div>
-        <div class="layers" aria-label="三層職責">
-          <article class="layer html">
-            <strong>HTML</strong>
-            <p>index.html 負責標題、段落、表單與導覽。</p>
-          </article>
-          <article class="layer css">
-            <strong>CSS</strong>
-            <p>src/styles 負責顏色、字級、版面與元件。</p>
-          </article>
-          <article class="layer js">
-            <strong>JavaScript</strong>
-            <p>src/scripts 負責主題、選單與記事。</p>
-          </article>
-        </div>
+      <section class="sky" aria-label="中秋夜空">
+        <div class="lantern lantern-left" aria-hidden="true"></div>
+        <div class="lantern lantern-right" aria-hidden="true"></div>
+        <div class="moon" aria-hidden="true"></div>
+        <p class="kicker">月圓人團圓</p>
+        <h1>中秋節快樂</h1>
+        <p class="lead">桂花剛開的夜晚，把一句話留給想見面的人。</p>
       </section>
 
-      <section id="structure" class="section">
-        <div class="section-head">
-          <span class="section-index">01 — 目錄</span>
-          <h2>檔案各管一件事。</h2>
-          <p>從入口頁往下看，標記、靜態檔、樣式與腳本不會混在同一個檔案裡。</p>
-        </div>
-        <ul class="tree">
-          <li>
-            <span class="path">index.html</span>
-            <span class="role">頁面結構與一打開就看得到的內容</span>
-          </li>
-          <li class="dir">
-            <span class="path">public/</span>
-            <span class="role">原樣提供的靜態檔</span>
-            <ul>
-              <li>
-                <span class="path">favicon.svg</span>
-                <span class="role">瀏覽器分頁圖示</span>
-              </li>
-            </ul>
-          </li>
-          <li class="dir">
-            <span class="path">src/styles/</span>
-            <span class="role">外觀，依職責拆開</span>
-            <ul>
-              <li>
-                <span class="path">tokens.css</span>
-                <span class="role">顏色、字體、間距</span>
-              </li>
-              <li>
-                <span class="path">base.css</span>
-                <span class="role">重置與內文排版</span>
-              </li>
-              <li>
-                <span class="path">layout.css</span>
-                <span class="role">頁首、版面、頁尾</span>
-              </li>
-              <li>
-                <span class="path">components.css</span>
-                <span class="role">目錄、色票、記事卡</span>
-              </li>
-            </ul>
-          </li>
-          <li class="dir">
-            <span class="path">src/scripts/</span>
-            <span class="role">行為，一個模組一件事</span>
-            <ul>
-              <li>
-                <span class="path">main.js</span>
-                <span class="role">入口，把樣式與模組接上頁面</span>
-              </li>
-              <li>
-                <span class="path">theme.js</span>
-                <span class="role">淺色與深色，並記住選擇</span>
-              </li>
-              <li>
-                <span class="path">nav.js</span>
-                <span class="role">選單、目前區塊、捲動時的頁首</span>
-              </li>
-              <li>
-                <span class="path">swatches.js</span>
-                <span class="role">把色票換成目前的顏色值</span>
-              </li>
-              <li>
-                <span class="path">notes.js</span>
-                <span class="role">記事的新增、刪除與保存</span>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-
-      <section id="styles" class="section">
-        <div class="section-head">
-          <span class="section-index">02 — 樣式</span>
-          <h2>顏色集中在變數裡。</h2>
-          <p>
-            三層各自有一個識別色，定義在 <code>tokens.css</code>。換主題時只改變數，元件不用各寫一套。
-          </p>
-        </div>
-        <div class="swatches">
-          <article class="swatch">
-            <div class="chip html"></div>
-            <strong>HTML</strong>
-            <span><code class="token-value" data-token="--html">--html</code> 標記層</span>
-          </article>
-          <article class="swatch">
-            <div class="chip css"></div>
-            <strong>CSS</strong>
-            <span><code class="token-value" data-token="--css">--css</code> 樣式層</span>
-          </article>
-          <article class="swatch">
-            <div class="chip js"></div>
-            <strong>JavaScript</strong>
-            <span><code class="token-value" data-token="--js">--js</code> 行為層</span>
-          </article>
-        </div>
-      </section>
-
-      <section id="notes" class="section">
-        <div class="section-head">
-          <span class="section-index">03 — 腳本</span>
-          <h2>記事留在這台瀏覽器。</h2>
-          <p>
-            表單寫在 HTML，外觀寫在 CSS，儲存與清單由 <code>notes.js</code> 處理。重新整理後，記事還在。
-          </p>
-        </div>
-        <div class="note-panel">
-          <form id="note-form" class="note-form">
-            <div class="field-head">
-              <label for="note-input">新記事</label>
-              <span id="note-length" class="count">0/120</span>
-            </div>
-            <input
-              id="note-input"
-              name="note"
-              type="text"
-              maxlength="120"
-              placeholder="例如：把首頁標題換成作品名"
-              autocomplete="off"
-            />
-            <button class="button" type="submit">記下</button>
-            <p id="note-error" class="note-error" role="alert" hidden></p>
-            <p id="note-hint" class="hint">最多 20 則，只存在這台瀏覽器的本地儲存。</p>
-          </form>
-          <div class="note-slot">
-            <p id="note-empty" class="note-empty">還沒有記事。寫下一則，它會留在這台瀏覽器。</p>
-            <ul id="note-list" class="note-list" aria-label="記事清單"></ul>
+      <section class="desk">
+        <form id="wish-form" class="wish-form">
+          <div class="field">
+            <label for="wish-name">送給</label>
+            <input id="wish-name" name="name" type="text" maxlength="20" placeholder="例如：家裡的人" autocomplete="name" />
           </div>
-        </div>
+          <div class="field">
+            <div class="field-head">
+              <label for="wish-message">一句祝福</label>
+              <span id="wish-length" class="count">0/80</span>
+            </div>
+            <textarea id="wish-message" name="message" maxlength="80" rows="3" placeholder="願團圓的桌子，今年不再空一席。"></textarea>
+          </div>
+          <div class="presets" role="group" aria-label="現成的句子">
+            <button type="button" data-preset="月圓人圓，歲歲平安。">月圓人圓</button>
+            <button type="button" data-preset="今晚的月色，留給想團圓的人。">今晚的月色</button>
+            <button type="button" data-preset="桂花香裡，吃塊月餅就好。">桂花與月餅</button>
+          </div>
+          <p class="hint">寫下的話只留在這台瀏覽器，重新整理還在。</p>
+        </form>
+
+        <article class="card" aria-live="polite">
+          <p class="card-kicker">中秋賀卡</p>
+          <p class="card-to">送給 <strong id="card-name">想見面的人</strong></p>
+          <h2>中秋節快樂</h2>
+          <p id="card-message" class="card-message">願團圓的桌子，今年不再空一席。</p>
+        </article>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-inner">
-        <p>紙頁 · 靜態網站骨架</p>
-        <p>Vite 負責開發伺服器，成品仍是 HTML、CSS 與 JavaScript。</p>
-      </div>
+      <p>中秋夜，人在就好。</p>
     </footer>
     <script type="module" src="/src/scripts/main.js"></script>
   </body>
