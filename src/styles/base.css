@@ -15,9 +15,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--ink);
-  background:
-    radial-gradient(900px 420px at 0% -10%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 55%),
-    var(--bg);
+  background: var(--bg);
 }
 
 img {
