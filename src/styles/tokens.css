@@ -1,16 +1,36 @@
 :root {
-  color-scheme: dark;
-  --sky: #10192b;
-  --sky-deep: #070d18;
-  --moon: #f6e7c1;
-  --moon-shadow: #d7b56a;
-  --gold: #e7c27a;
-  --lantern: #c4492c;
-  --paper: #f7f1e6;
+  color-scheme: light;
+  --bg: #f3eee6;
+  --bg-raised: #fffdf8;
   --ink: #1c1915;
-  --ink-soft: #5e564c;
-  --line: rgba(246, 231, 193, 0.22);
-  --serif: "Noto Serif TC", "Iowan Old Style", serif;
-  --sans: "Noto Sans TC", "Segoe UI", sans-serif;
-  --content: 68rem;
+  --ink-soft: #5e574e;
+  --line: #e4dacd;
+  --accent: #9c3b2e;
+  --accent-soft: #f6e4de;
+  --html: #9c3b2e;
+  --css: #1f6b4a;
+  --js: #8a5a10;
+  --shadow: 0 18px 40px rgba(48, 32, 16, 0.08);
+  --radius: 18px;
+  --header-h: 4.5rem;
+  --space: 1.25rem;
+  --content: 70rem;
+  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --sans: "Outfit", "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141210;
+  --bg-raised: #211e1a;
+  --ink: #f4efe7;
+  --ink-soft: #b7aea2;
+  --line: #3a342c;
+  --accent: #e08b7c;
+  --accent-soft: #3a2622;
+  --html: #e08b7c;
+  --css: #7dcea8;
+  --js: #e2b15a;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
